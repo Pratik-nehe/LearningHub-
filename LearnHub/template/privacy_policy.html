@@ -1,0 +1,245 @@
+{% include 'nav.html' %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>LearnHub Policies</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f4f6f8;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        
+        .policy-container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: white;
+            padding: 40px 50px;
+            border-radius: 12px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+        }
+        /* Hide the main policy-nav as you're including your own external one */
+        
+        nav.policy-nav {
+            display: none;
+        }
+        /* Style for the new sub-navbar */
+        
+        .sub-policy-nav {
+            margin-bottom: 30px;
+            border-bottom: 1px solid #dfe6e9;
+            padding-bottom: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            /* Center the sub-navbar links */
+        }
+        
+        .sub-policy-nav a {
+            font-weight: 600;
+            color: #0984e3;
+            font-size: 15px;
+            /* Slightly smaller than main nav */
+            text-decoration: none;
+            transition: color 0.3s ease, transform 0.2s ease;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        
+        .sub-policy-nav a:hover {
+            color: #fff;
+            background-color: #00b894;
+            /* Highlight on hover */
+            text-decoration: none;
+            transform: translateY(-2px);
+            /* Slight lift effect */
+        }
+        
+        h1 {
+            color: #2d3436;
+            letter-spacing: 1px;
+            font-size: 3em;
+            /* Larger, more prominent heading */
+            margin-bottom: 40px;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05);
+            /* Subtle shadow */
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        h1::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: #0984e3;
+            /* Underline effect */
+            border-radius: 2px;
+        }
+        
+        h2 {
+            color: #2d3436;
+            letter-spacing: 0.5px;
+            font-size: 1.8em;
+            /* Slightly larger sub-headings */
+            margin-bottom: 20px;
+            border-bottom: 2px solid #00b894;
+            /* Underline for sub-headings */
+            padding-bottom: 5px;
+            display: inline-block;
+            /* Makes border-bottom fit content */
+        }
+        
+        .policy-section {
+            margin-bottom: 50px;
+            border-left: 4px solid #00b894;
+            background: #fafafa;
+            padding: 20px;
+            border-radius: 6px;
+        }
+        
+        .policy-section p,
+        .policy-section li {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        
+        .policy-section ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        a {
+            color: #0984e3;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .policy-container {
+                padding: 25px 20px;
+            }
+            h1 {
+                font-size: 2.2em;
+                /* Adjust heading size for smaller screens */
+            }
+            h2 {
+                font-size: 1.5em;
+            }
+            .sub-policy-nav {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="policy-container">
+        <nav class="policy-nav">
+            <a href="#terms">Terms</a>
+            <a href="#privacy">Privacy Policy</a>
+            <a href="#video-disclaimer">Video Disclaimer</a>
+            <a href="#notes-disclaimer">Notes Disclaimer</a>
+            <a href="#paid-content">Paid Content Notice</a>
+            <a href="#data-archiving">Data Archiving</a> </nav>
+
+        <h1>LearnHub Policies</h1>
+
+        <div class="sub-policy-nav">
+            <a href="#terms">Terms</a>
+            <a href="#privacy">Privacy Policy</a>
+            <a href="#video-disclaimer">Video Disclaimer</a>
+            <a href="#notes-disclaimer">Notes Disclaimer</a>
+            <a href="#paid-content">Paid Content & Certificates</a>
+            <a href="#data-archiving">Data Archiving</a> <a href="#contact-support">Contact</a>
+        </div>
+
+        <section id="terms" class="policy-section">
+            <h2>Terms and Conditions</h2>
+            <p>By using LearnHub, you agree to the following terms:</p>
+            <ul>
+                <li>**Use of Service:** LearnHub is for personal educational use only.</li>
+                <li>**User Conduct:** Misuse, illegal uploads, or spamming is strictly prohibited.</li>
+                <li>**Account Responsibility:** You are responsible for keeping your account secure.</li>
+                <li>**Updates:** We may update our terms anytime without prior notice.</li>
+            </ul>
+        </section>
+
+        <section id="privacy" class="policy-section">
+            <h2>Privacy Policy</h2>
+            <p>Your privacy is important to us. Here's what we collect and how we use it:</p>
+            <ul>
+                <li>**Personal Info:** We collect your name, email, and profile info upon registration.</li>
+                <li>**Usage Data:** We track site interaction for improving user experience.</li>
+                <li>**Cookies:** We use cookies for login and analytics purposes.</li>
+                <li>**Data Protection:** Your data is stored securely and never sold.</li>
+            </ul>
+        </section>
+
+        <section id="video-disclaimer" class="policy-section">
+            <h2>Video Content Disclaimer</h2>
+            <p>Some videos on LearnHub may be copied or curated from external sources and not originally created by our team.</p>
+            <p>If any copyright is violated unknowingly, please <a href="mailto:support@learnhub.com">contact us</a>. We’ll review and remove if necessary.</p>
+        </section>
+
+        <section id="notes-disclaimer" class="policy-section">
+            <h2>Notes Disclaimer</h2>
+            <p>Many notes provided on LearnHub are sourced from other websites or authors and may not be originally created by us.</p>
+            <p>We do not claim ownership over all notes unless explicitly mentioned. If you are the original creator and wish for removal, please <a href="mailto:support@learnhub.com">email us</a>.</p>
+        </section>
+
+        <section id="paid-content" class="policy-section">
+            <h2>Paid Courses, Notes, and Certificates (Upcoming ⌛)</h2>
+            <p>In the future, LearnHub will launch premium notes and paid courses created entirely by the LearnHub team. Upon completion of these courses and successful passing of associated tests, users may receive a **certificate of completion**.</p>
+            <ul>
+                <li>These will be original and exclusive to LearnHub.</li>
+                <li>Premium content will be clearly marked and protected under copyright.</li>
+                <li>Pricing and access details will be published upon launch.</li>
+                <li>
+                    **Important Note on Certificates:** Any certificates provided by LearnHub are for **personal achievement and knowledge validation within our platform only**. They are **not government-affiliated, accredited by any official educational body, or intended
+                    for use on resumes or as professional qualifications**. They solely signify your completion of a LearnHub course. This data, like the certificates themselves, is provided for entertainment and personal satisfaction, and should not
+                    be taken seriously for any formal or professional applications.
+                </li>
+            </ul>
+        </section>
+
+        <section id="data-archiving" class="policy-section">
+            <h2>Data Archiving Policy</h2>
+            <p>In the future, LearnHub intends to implement a comprehensive data archiving policy. This means that at certain intervals, or under specific circumstances, we will **archive all courses, notes, and certificates** associated with user accounts.
+                Archived data will typically be moved to a secure, long-term storage solution.</p>
+            <ul>
+                <li>**Purpose of Archiving:** Archiving helps us manage server resources, ensure data integrity, and comply with data retention best practices.</li>
+                <li>**Access to Archived Data:** While data is archived, it may not be immediately accessible through the live platform. Procedures for requesting access to archived content, if available, will be communicated at a later date.</li>
+                <li>**Notifications:** Users will be notified in advance of any major archiving events that might affect their access to content.</li>
+                <li>**Impact on User Experience:** Archiving is intended to be a seamless process, but occasional maintenance related to data management may occur.</li>
+            </ul>
+            <p>We are committed to providing a reliable platform, and our archiving policy is part of maintaining a sustainable and efficient learning environment.</p>
+        </section>
+
+        <section id="contact-support" class="policy-section">
+            <h2>Contact & Support</h2>
+            <p>For questions or policy concerns, contact us at <a href="mailto:support@learn04hub@gmail.com">support@learnhub.com</a> or <a href="tel:8806441089">call us</a>.</p>
+            <p>Thank you for trusting LearnHub as your learning partner.</p>
+        </section>
+    </div>
+
+    {% include 'footer.html' %}
+
+</body>
+
+</html>

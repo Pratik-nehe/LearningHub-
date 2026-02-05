@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form method="post" enctype="multipart/form-data" class="space-y-6">
+        {% csrf_token %}
+        <div>
+            <label for="title" class="block text-white font-semibold">Title</label>
+            <input type="text" name="title" id="title" placeholder="Enter the title" class="w-full mt-2 px-4 py-2 rounded-md bg-white bg-opacity-20 text-white placeholder-white focus:outline-none focus:ring-2 focus:ring-indigo-300">
+        </div>
+        <div>
+            <label for="video_file" class="block text-white font-semibold">Upload Video</label>
+            <input type="file" name="video_file" id="video_file" class="w-full mt-2 px-4 py-2 rounded-md bg-white bg-opacity-20 text-white placeholder-white focus:outline-none focus:ring-2 focus:ring-indigo-300">
+        </div>
+        <button type="submit" class="w-full py-2 bg-indigo-600 text-white rounded-md font-semibold hover:bg-indigo-700 transition duration-300">
+        Submit
+    </button>
+    </form>
+
+</body>
+
+</html>

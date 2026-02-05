@@ -1,0 +1,42 @@
+{% load static %} {% include 'nav.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnHub - Your Learning Journey Starts Here</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+
+<body class="font-inter text-gray-800 bg-gray-50 antialiased">
+
+    <div>
+        <header class="morphing-bg py-24 md:py-32 text-center relative overflow-hidden">
+            <div class="absolute inset-0 z-0 opacity-10">
+                <div class="shape-blob shape-blob-1"></div>
+                <div class="shape-blob shape-blob-2"></div>
+                <div class="shape-blob shape-blob-3"></div>
+            </div>
+            <div class="container mx-auto px-6 relative z-10">
+                <h1 class="text-5xl md:text-7xl font-extrabold text-white leading-tight mb-6 animate-fade-in-down drop-shadow-lg">
+                    Unlock Your Potential with <span class="text-blue-200">LearnHub</span>
+                </h1>
+                <p class="text-lg md:text-xl text-blue-100 max-w-3xl mx-auto mb-10 animate-fade-in-up drop-shadow">
+                    Dive into a world of knowledge with engaging courses, expert instructors, and a vibrant community. Your journey to mastery starts here.
+                </p>
+                <a href="{% url 'login' %}" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-10 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-300 animate-pop-in">
+                    Start Learning Today!
+                </a>
+            </div>
+        </header>
+    </div>
+
+    {% include 'footer.html' %}
+    <script src="{% static 'js/learnhub.js' %}"></script>
+</body>
+
+</html>

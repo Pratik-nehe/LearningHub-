@@ -1,0 +1,85 @@
+/* Optional: If no Tailwind, add some base styles */
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+
+/* Navbar styles */
+
+.navbar {
+    background: linear-gradient(90deg, #1a59b8, #0f3c80);
+    /* Beautiful blue gradient background */
+    color: #ffffff;
+    /* White text color */
+    padding: 10px 20px;
+    /* Spacing inside navbar */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+/* Navbar links */
+
+.navbar a {
+    color: #f1f5ff;
+    /* Light text color */
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+
+/* Hover effect for links */
+
+.navbar a:hover {
+    color: #ffcc00;
+    /* Gold-yellow hover color */
+}
+
+
+/* Optional: navbar logo or brand name */
+
+.navbar .brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+nav {
+    background: linear-gradient(to right, #77899c, #9f9cd1);
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #c7d2fe;
+}
+
+#nav-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#nav-toggle span {
+    display: block;
+    width: 32px;
+    height: 4px;
+    background-color: white;
+    margin-bottom: 6px;
+    border-radius: 2px;
+}

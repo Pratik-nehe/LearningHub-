@@ -1,0 +1,247 @@
+{% include 'nav.html' %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Quiz</title>
+    <style>
+        body {
+            background: #f0f4f8;
+            /* A soft, light grey background */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            /* Remove default body padding */
+            display: flex;
+            /* Use flexbox for body to stack content */
+            flex-direction: column;
+            /* Stack children vertically */
+            min-height: 100vh;
+            /* Ensure body takes full viewport height */
+        }
+        
+        .main-content-wrapper {
+            /* New wrapper to hold the form and allow footer to stick */
+            flex-grow: 1;
+            /* Allows this wrapper to take available space */
+            padding: 20px;
+        }
+        
+        form {
+            max-width: 800px;
+            /* Slightly increased max-width for better question display */
+            margin: 30px auto;
+            background: #ffffff;
+            /* White background for the form */
+            padding: 30px 40px;
+            /* Increased padding */
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+            /* Refined shadow */
+            color: #333;
+        }
+        
+        form div.question-block {
+            /* Specific class for question containers */
+            margin-bottom: 30px;
+            /* More space between questions */
+            padding-bottom: 20px;
+            /* Padding above the HR */
+            border-bottom: 1px solid #eee;
+            /* Light separator line */
+        }
+        
+        form div.question-block:last-of-type {
+            border-bottom: none;
+            /* No border for the last question */
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        form p strong {
+            font-size: 20px;
+            /* Slightly larger question text */
+            color: #2c3e50;
+            margin-bottom: 15px;
+            /* More space between question and options */
+            display: block;
+            line-height: 1.4;
+            /* Improved line height for readability */
+        }
+        
+        label {
+            display: flex;
+            /* Use flexbox for label to align radio and text */
+            align-items: center;
+            /* Vertically center content */
+            cursor: pointer;
+            padding: 12px 18px;
+            /* Increased padding for options */
+            border-radius: 8px;
+            margin-bottom: 10px;
+            /* Space between options */
+            border: 2px solid #e0e6ec;
+            /* Light border by default */
+            transition: all 0.3s ease;
+            user-select: none;
+            background-color: #fcfcfc;
+            /* Slightly off-white for options */
+            font-size: 17px;
+            /* Option text size */
+        }
+        
+        input[type="radio"] {
+            margin-right: 12px;
+            /* More space for the radio button */
+            accent-color: #007bff;
+            /* Primary blue for radio button */
+            width: 18px;
+            /* Make radio button slightly larger */
+            height: 18px;
+            /* Make radio button slightly larger */
+            flex-shrink: 0;
+            /* Prevent radio button from shrinking */
+        }
+        
+        label:hover {
+            background-color: #e9f5ff;
+            /* Lighter blue on hover */
+            border-color: #007bff;
+            /* Primary blue border on hover */
+        }
+        /* Style for checked radio buttons */
+        
+        input[type="radio"]:checked+span {
+            /* Targeting a span inside the label if you wrap the text */
+            color: #0056b3;
+            font-weight: 600;
+        }
+        
+        label.checked {
+            /* Apply a class on checked for more distinct styling */
+            background-color: #d8eaff;
+            /* More noticeable background when checked */
+            border-color: #007bff;
+            box-shadow: 0 2px 8px rgba(0, 123, 255, 0.1);
+        }
+        
+        button[type="submit"] {
+            background-color: #007bff;
+            /* Primary blue submit button */
+            color: white;
+            font-weight: 600;
+            padding: 14px 32px;
+            /* Increased padding */
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 19px;
+            /* Slightly larger font */
+            box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            display: block;
+            /* Make button take full width to center it better on small screens */
+            width: fit-content;
+            /* Adjust width to content */
+            margin: 30px auto 0;
+            /* Center the button */
+        }
+        
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+            /* Darker blue on hover */
+            transform: translateY(-2px);
+            /* Slight lift */
+            box-shadow: 0 7px 20px rgba(0, 123, 255, 0.4);
+        }
+        /* Responsive adjustments */
+        
+        @media (max-width: 768px) {
+            form {
+                margin: 20px auto;
+                padding: 25px 30px;
+                max-width: 95%;
+                /* Take more width on smaller screens */
+            }
+            h1 {
+                font-size: 28px;
+            }
+            form p strong {
+                font-size: 18px;
+            }
+            label {
+                padding: 10px 15px;
+                font-size: 16px;
+            }
+            button[type="submit"] {
+                padding: 12px 25px;
+                font-size: 17px;
+                width: 100%;
+                /* Full width button on small screens */
+                box-sizing: border-box;
+                /* Include padding in width calculation */
+            }
+        }
+        
+        @media (max-width: 480px) {
+            form {
+                padding: 20px 20px;
+            }
+            form p strong {
+                font-size: 16px;
+            }
+            label {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-content-wrapper">
+        <form method="post">
+            {% csrf_token %} {% for question in questions %}
+            <div class="question-block">
+                <p><strong>{{ forloop.counter }}. {{ question.text }}</strong></p>
+                <label>
+                    <input type="radio" name="{{ question.id }}" value="A" required>
+                    <span>{{ question.option_a }}</span>
+                </label>
+                <label>
+                    <input type="radio" name="{{ question.id }}" value="B">
+                    <span>{{ question.option_b }}</span>
+                </label>
+                <label>
+                    <input type="radio" name="{{ question.id }}" value="C">
+                    <span>{{ question.option_c }}</span>
+                </label>
+                <label>
+                    <input type="radio" name="{{ question.id }}" value="D">
+                    <span>{{ question.option_d }}</span>
+                </label>
+            </div>
+            {% endfor %}
+            <button type="submit">Submit Quiz</button>
+        </form>
+    </div>
+    {% include 'footer.html' %}
+
+    <script>
+        // JavaScript to add 'checked' class to label when its radio button is selected
+        document.addEventListener('change', function(event) {
+            if (event.target.type === 'radio') {
+                const name = event.target.name;
+                // Remove 'checked' class from all labels for this question
+                document.querySelectorAll(`input[name="${name}"]`).forEach(function(radio) {
+                    radio.closest('label').classList.remove('checked');
+                });
+                // Add 'checked' class to the newly selected label
+                event.target.closest('label').classList.add('checked');
+            }
+        });
+    </script>
+</body>
+
+</html>

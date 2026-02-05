@@ -1,0 +1,254 @@
+/* ============================= */
+
+
+/* FOOTER CSS           */
+
+
+/* ============================= */
+
+.custom-footer {
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+    padding: 40px 20px;
+    font-family: 'Inter', sans-serif;
+    border-top: 5px solid #007bff;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.custom-footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    /* Reduce or remove the gap */
+    gap: 0px;
+    /* Changed from 30px to 0px */
+}
+
+
+/* === Brand Section === */
+
+.footer-brand {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-brand h2 {
+    font-size: 2.2rem;
+    margin: 0 0 10px 0;
+    font-weight: 700;
+    color: #8be9fd;
+    letter-spacing: 0.05em;
+    text-shadow: 0 0 8px rgba(139, 233, 253, 0.4);
+}
+
+.footer-brand p {
+    font-size: 0.95rem;
+    color: #b0b0b0;
+    margin: 0;
+    line-height: 1.5;
+    padding: 0 10px;
+}
+
+
+/* === Contact === */
+
+.footer-contact {
+    /* Adjusted margin-top to reduce space if it shifts up */
+    margin-top: 0px;
+    /* Changed from 20px to 0px */
+    flex-basis: 100%;
+    /* Make contact take full width on its own line */
+    text-align: center;
+    /* Center align for better appearance when it's on its own line */
+    order: 4;
+    /* Ensures it appears last */
+    padding-top: 20px;
+    /* Add some padding if needed from elements above */
+}
+
+.phone-link {
+    color: #00bcd4;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.2s ease;
+    font-size: 1.1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    background-color: rgba(0, 188, 212, 0.1);
+}
+
+.phone-link i {
+    font-size: 1.2em;
+    color: #00c0ff;
+}
+
+.phone-link:hover {
+    color: #e6e6e6;
+    background-color: #00bcd4;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 188, 212, 0.4);
+}
+
+
+/* === Quick Links Section === */
+
+.footer-links {
+    flex: 1.2;
+    min-width: 250px;
+    padding-top: 10px;
+    /* Adjust right margin to control space next to it if needed */
+    margin-right: 0px;
+    /* Ensure no extra margin pushes it away */
+}
+
+.footer-links h3 {
+    font-size: 1.4rem;
+    color: #f8f8f2;
+    margin-bottom: 15px;
+    font-weight: 600;
+    border-bottom: 2px solid #5dade2;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-links a {
+    color: #c0c0c0;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: #5dade2;
+    transform: translateX(5px);
+}
+
+
+/* === Social Icons Section === */
+
+.footer-social {
+    flex: 0.8;
+    min-width: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 10px;
+    /* Adjust left margin to control space next to it if needed */
+    margin-left: 0px;
+    /* Ensure no extra margin pulls it away */
+}
+
+.footer-social h3 {
+    font-size: 1.4rem;
+    color: #f8f8f2;
+    margin-bottom: 15px;
+    font-weight: 600;
+    border-bottom: 2px solid #5dade2;
+    padding-bottom: 5px;
+    width: 100%;
+    display: inline-block;
+}
+
+.footer-social .social-icons-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.footer-social a {
+    font-weight: bold;
+    color: #ccc;
+    text-decoration: none;
+    font-size: 1.4rem;
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+}
+
+.footer-social a:hover {
+    background-color: #5dade2;
+    color: #1a1a2e;
+    border-color: #5dade2;
+    transform: scale(1.15) rotate(5deg);
+    box-shadow: 0 5px 15px rgba(93, 173, 226, 0.4);
+}
+
+
+/* === Responsive === */
+
+@media (max-width: 768px) {
+    .ppp {
+        margin-left: 30%;
+    }
+    .custom-footer .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .footer-brand,
+    .footer-links,
+    .footer-social {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .footer-brand h2,
+    .footer-links h3,
+    .footer-social h3 {
+        text-align: center;
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+    .footer-links ul {
+        align-items: center;
+    }
+    .footer-social .social-icons-wrapper {
+        justify-content: center;
+        width: 100%;
+    }
+    .footer-contact {
+        margin-top: 0;
+        /* Ensure no extra top margin on small screens */
+        padding-top: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .custom-footer {
+        padding: 25px 15px;
+    }
+    .footer-brand h2 {
+        font-size: 1.8rem;
+    }
+    .phone-link {
+        font-size: 1rem;
+    }
+    .footer-social a {
+        width: 35px;
+        height: 35px;
+        font-size: 1.2rem;
+    }
+}

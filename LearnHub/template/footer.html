@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LearnHub</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+
+
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        main {
+            flex: 1;
+        }
+        
+        a {
+            all: unset;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <footer class="custom-footer">
+        <a style="margin-left:40%" href="{% url 'policy' %}">Privacy Policy</a>
+
+        <div class="container">
+            <div class="footer-brand">
+                <br>
+                <p class="copyright">&copy; 2025 LearnHub. All rights reserved.</p>
+                <p class="brand-mission">Your ultimate platform for online learning and skill development.</p>
+                <p class="ppp" class="brand-mission">Devlop and design by <a style="  text-decoration: none;
+" href="https://wa.me/7972620467"> PratikNehe</a> and Team</p>
+
+            </div>
+
+            <navv style="background-color:rgba(0, 0, 0, 0.064)" class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="{% url 'main' %}">Home</a></li>
+                    <li><a href="{% url 'features' %}">Features</a></li>
+                    <li><a href="{% url 'courses' %}">Courses</a></li>
+                    <li><a href="{% url 'notes' %}">Notes</a></li>
+                    <li><a href="{% url 'exam' %}">Exams</a></li>
+
+                    <li><a href="{% url 'aboute' %}">About Us</a></li>
+                    <li><a href="{% url 'contact' %}">Contact   </a></li>
+                    <li><a href="{% url 'view_profile' %}">Profile</a></li>
+
+                </ul>
+            </navv>
+
+            <div class="footer-social">
+                <h3>Connect With Us</h3>
+                <div class="social-icons-wrapper">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+    </footer>
+</body>
+
+</html>

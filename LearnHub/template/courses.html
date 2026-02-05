@@ -1,0 +1,85 @@
+{% load static %} {% include 'nav.html' %} {% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Courses</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Font: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/courses.css' %}" />
+
+
+</head>
+
+<body class="bg-gray-100">
+
+    <section class="py-16 md:py-20">
+        <div class="container mx-auto px-4">
+            <h1 class="text-5xl font-extrabold mb-12 text-center text-blue-700 tracking-wide">Popular Courses</h1>
+
+            {% if v %}
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {% for i in v %}
+                <div class="course-card animate-fadeIn" style="animation-delay: calc(0.1s * {{ forloop.counter0 }});">
+                    <video controls preload="metadata" class="course-video">
+                        <source src="{{ i.video.url }}" type="video/mp4" />
+                        Sorry, your browser doesn't support embedded videos.
+                    </video>
+                    <div class="course-content">
+                        <h3 class="course-title text-xl font-semibold mb-2">{{ i.title }}</h3>
+                        <p class="course-info text-sm text-gray-700">{{ i.info }}</p>
+                        <span class="course-time text-gray-500 text-xs mt-2">⏱ {{ i.time }}</span>
+
+                        <a href="{% url 'video_detail' i.id %}" target="_blank" rel="noopener noreferrer">
+                            <button class="watch-btn" data-video-id="{{ forloop.counter0 }}">Watch Video</button>
+                        </a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% else %}
+            <p class="text-center text-lg text-gray-700">No study videos uploaded yet.</p>
+            {% endif %}
+        </div>
+    </section>
+
+    {% include 'footer.html' %}
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const videos = document.querySelectorAll('video');
+            const buttons = document.querySelectorAll('.watch-btn');
+
+            // Pause all other videos when one plays
+            videos.forEach(video => {
+                video.addEventListener('play', () => {
+                    videos.forEach(other => {
+                        if (other !== video) other.pause();
+                    });
+                });
+            });
+
+            // Pause the video when Watch button is clicked
+            buttons.forEach((btn, index) => {
+                btn.addEventListener('click', () => {
+                    if (videos[index]) {
+                        videos[index].pause();
+                    }
+                });
+            });
+        });
+    </script>
+
+    <!-- Optional: External JS (make sure path is correct if used) -->
+    <!-- <script src="{% static 'js/courses.js' %}"></script> -->
+</body>
+
+</html>
+{% endblock %}

@@ -1,0 +1,70 @@
+{% load static %} {% include 'nav.html' %} {% block context %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Font: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/learnhub.css' %}">
+</head>
+
+<body>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 md:py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-bold text-center text-gray-900 mb-12">Why Choose Us?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-xl hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-2">
+                    <div class="text-blue-600 text-5xl mb-6 flex justify-center">
+                        <!-- Inline SVG for Scalability and Customization -->
+                        <img src="https://img.freepik.com/free-photo/dynamic-data-visualization-3d_23-2151904311.jpg?semt=ais_hybrid&w=740" alt="" height="300px" width="500px">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.079 0-2.157.17-3.204.517a3.375 3.375 0 0 0-.359 4.636l4.09 4.09a3.375 3.375 0 0 0 4.636-.359l3.204-3.204A8.967 8.967 0 0 0 18 12c.733 0 1.463-.09 2.179-.267a3.375 3.375 0 0 0-.359-4.636l-4.09-4.09a3.375 3.375 0 0 0-4.636.359Z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.079 0-2.157.17-3.204.517a3.375 3.375 0 0 0-.359 4.636l4.09 4.09a3.375 3.375 0 0 0 4.636-.359l3.204-3.204A8.967 8.967 0 0 0 18 12c.733 0 1.463-.09 2.179-.267a3.375 3.375 0 0 0-.359-4.636l-4.09-4.09a3.375 3.375 0 0 0-4.636.359Z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 12h.008v.008H6V12Zm2.25 4.5h.008v.008H8.25V16.5Zm4.5 0h.008v.008H12.75V16.5Zm2.25-4.5h.008v.008H15V12Z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-center mb-4">Expert Instructors</h3>
+                    <p class="text-center text-gray-600">Learn from industry leaders and passionate educators who bring real-world experience to their teachings.</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-xl hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-2">
+                    <div class="text-blue-600 text-5xl mb-6 flex justify-center">
+                        <img src="https://c9.shauryasoft.com/media/bny-wcp-2504251752-0082840102.png" alt="" height="300px" width="500px">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m6.75 7.5 3 2.25-3 2.25m4.5 0 3-2.25-3-2.25M12 12v6m0 0 1.5-1.5M12 18l-1.5-1.5M9 7.5l-3-2.25-3 2.25" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m0 0 1.5-1.5M12 18l-1.5-1.5M9 7.5l-3-2.25-3 2.25M21 12c0-4.97-4.03-9-9-9S3 7.03 3 12c0 4.97 4.03 9 9 9s9-4.03 9-9Z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-center mb-4">Interactive Learning</h3>
+                    <p class="text-center text-gray-600">Engage with hands-on projects, quizzes, and live Q&A sessions to solidify your understanding.</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-xl hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-2">
+                    <div class="text-blue-600 text-5xl mb-6 flex justify-center">
+                        <img src="https://www.amle.org/wp-content/uploads/2021/02/784784p888EDNmain1018Merenbloom_pic.jpg" alt="" height="300px" width="500px">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 21.75a9.75 9.75 0 1 0 0-19.5 9.75 9.75 0 0 0 0 19.5Z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 16.5v-4.5m0-4.5h.008v.008H12V7.5Z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-center mb-4">Flexible Schedule</h3>
+                    <p class="text-center text-gray-600">Learn at your own pace, anytime, anywhere. Our platform is designed to fit your busy lifestyle.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% include 'footer.html' %}
+
+
+</body>
+
+</html>
+{% endblock %}

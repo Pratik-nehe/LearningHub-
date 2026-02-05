@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Certificate of Achievement</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background: #f7f7f7;
+            padding: 50px;
+            text-align: center;
+        }
+        
+        .certificate {
+            border: 10px solid #787878;
+            padding: 50px;
+            width: 800px;
+            margin: auto;
+            background: white;
+        }
+        
+        .certificate-inner {
+            border: 5px solid #787878;
+            padding: 30px;
+        }
+        
+        h1 {
+            font-size: 48px;
+            margin-bottom: 0;
+        }
+        
+        .subtitle {
+            font-size: 24px;
+            margin-top: 0;
+            color: #555;
+        }
+        
+        .name {
+            font-size: 36px;
+            margin: 30px 0;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .message {
+            font-size: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .footer {
+            font-size: 16px;
+            color: #777;
+        }
+        
+        .sign {
+            margin-top: 60px;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 50px;
+        }
+        
+        .sign div {
+            text-align: center;
+        }
+        
+        .sign-line {
+            border-top: 1px solid #000;
+            width: 200px;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="certificate">
+        <div class="certificate-inner">
+            <h1>Certificate of Achievement</h1>
+            <p class="subtitle">This certificate is proudly presented to</p>
+            <div class="name">{{ user.get_full_name|default:user.username }}</div>
+            <p class="message">For successfully completing the quiz with a score of <strong>{{ score }}/60</strong></p>
+            <div class="sign">
+                <div>
+                    <div class="sign-line"></div>
+                    <p>Instructor</p>
+                </div>
+                <div>
+                    <div class="sign-line"></div>
+                    <p>Date: {{ date|date:"F d, Y" }}</p>
+                </div>
+            </div>
+            <div class="footer">
+                LearnHub • Excellence Through Learning
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

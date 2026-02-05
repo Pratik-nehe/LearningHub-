@@ -1,0 +1,162 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About Learning Hub</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/learnhub.css' %}" />
+
+    <!-- SEO & Meta Tags -->
+    <meta name="description" content="Learning Hub is your go-to platform for mastering new skills and advancing your career.">
+    <meta name="keywords" content="Learning, Online Courses, Education, Exams, Notes">
+    <meta name="author" content="Learning Hub Team">
+    <meta property="og:title" content="About Learning Hub" />
+    <meta property="og:description" content="Master skills and advance your career with Learning Hub." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ request.build_absolute_uri }}" />
+
+    <style>
+        /* Removed animation delays and fadeSlideUp animation that required JS */
+        /* Optional: you can keep a static style for team-img hover */
+        
+        .team-img {
+            transition: transform 0.3s ease;
+        }
+        
+        .team-img:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 font-inter text-gray-800">
+
+    <!-- Navbar Include -->
+    {% include 'nav.html' %}
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 py-16 space-y-24">
+
+        <!-- Stats Section -->
+        <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Active Users -->
+            <div class="bg-white shadow-lg rounded-xl p-6 text-center transform transition duration-500 hover:scale-105 hover:shadow-2xl opacity-100 translate-y-0">
+                <h5 class="text-lg font-semibold text-gray-600 mb-2">Active Users</h5>
+                <p class="text-4xl font-bold text-blue-600">
+                    {{ profile_count }}
+                </p>
+            </div>
+
+            <!-- Available Notes -->
+            <div class="bg-white shadow-lg rounded-xl p-6 text-center transform transition duration-500 hover:scale-105 hover:shadow-2xl opacity-100 translate-y-0">
+                <h5 class="text-lg font-semibold text-gray-600 mb-2">Available Notes</h5>
+                <p class="text-4xl font-bold text-green-600">
+                    {{ notes_count }}
+                </p>
+            </div>
+
+            <!-- Available Exams -->
+            <div class="bg-white shadow-lg rounded-xl p-6 text-center transform transition duration-500 hover:scale-105 hover:shadow-2xl opacity-100 translate-y-0">
+                <h5 class="text-lg font-semibold text-gray-600 mb-2">Available Exams</h5>
+                <p class="text-4xl font-bold text-yellow-600">
+                    {{ exam_count }}
+                </p>
+            </div>
+
+            <!-- Available Courses -->
+            <div class="bg-white shadow-lg rounded-xl p-6 text-center transform transition duration-500 hover:scale-105 hover:shadow-2xl opacity-100 translate-y-0">
+                <h5 class="text-lg font-semibold text-gray-600 mb-2">Available Courses</h5>
+                <p class="text-4xl font-bold text-purple-600">
+                    {{ video_count }}
+                </p>
+            </div>
+        </section>
+
+
+        <!-- About Section -->
+        <section id="about" class="bg-white/60 backdrop-blur-sm rounded-2xl p-10 shadow-xl">
+            <h1 class="text-5xl font-extrabold mb-6 text-center text-blue-700 tracking-wide">
+                📚 About Learning Hub
+            </h1>
+            <p class="max-w-3xl mx-auto text-lg leading-relaxed text-gray-700 text-center">
+                Learning Hub is your go-to platform for mastering new skills and advancing your career. We believe education should be accessible, engaging, and practical — empowering learners worldwide to achieve their goals.
+            </p>
+            <p class="max-w-3xl mx-auto mt-4 text-lg leading-relaxed text-gray-700 text-center">
+                Our mission is to create a vibrant community where learners connect, grow, and succeed together. Whether you’re just starting out or leveling up your expertise, Learning Hub supports your journey every step of the way.
+            </p>
+        </section>
+        <!-- Our Vision -->
+        ...
+        </section>
+
+        <!-- Project Details Section -->
+        <!-- (Insert the new section here) -->
+
+        <!-- Team Section Heading -->
+        ...
+
+
+        <!-- Our Aim -->
+        <section id="aim" class="py-12 bg-gradient-to-br from-blue-50 to-white rounded-xl shadow-inner">
+            <h2 class="text-4xl font-bold mb-4 text-center text-blue-600">🎯 Our Aim</h2>
+            <p class="max-w-3xl mx-auto text-lg leading-relaxed text-gray-700 text-center">
+                Our aim is to revolutionize education by combining technology and expert teaching to deliver meaningful, results-driven learning experiences.
+            </p>
+        </section>
+
+        <!-- Our Vision -->
+        <section id="vision" class="py-12 bg-gradient-to-br from-purple-50 to-white rounded-xl shadow-inner">
+            <h2 class="text-4xl font-bold mb-4 text-center text-blue-600">🌍 Our Vision</h2>
+            <p class="max-w-3xl mx-auto text-lg leading-relaxed text-gray-700 text-center">
+                We envision a world where anyone, anywhere, can access high-quality education that transforms their future. Learning Hub is committed to creating a global learning ecosystem that promotes innovation, inclusion, and lifelong success.
+            </p>
+        </section>
+
+        <!-- Team Section Heading -->
+        <div class="text-center mt-24 mb-12">
+            <h2 class="text-5xl font-extrabold text-blue-700 tracking-wide">
+                👥 Meet the Team
+            </h2>
+            <div class="w-24 h-1 mx-auto bg-gradient-to-r from-blue-400 to-purple-400 rounded-full mt-4"></div>
+        </div>
+
+        <!-- Team Grid -->
+        <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-4 md:px-0">
+            {% for member in t %}
+            <li>
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden transition-all duration-500 transform hover:-translate-y-2 hover:shadow-2xl p-6">
+                    <img loading="lazy" src="{{ member.photo.url }}" alt="Photo of {{ member.name }}, {{ member.post }}" class="team-img w-28 h-28 rounded-full object-cover mx-auto shadow-md border-4 border-blue-100" />
+
+                    <h3 class="text-xl font-semibold text-center mt-4 text-blue-700 tracking-wide">
+                        {{ member.name }}
+                    </h3>
+                    <h4 class="text-lg font-medium text-center mt-2 text-gray-600">
+                        {{ member.post }}
+                    </h4>
+                    <p class="text-gray-600 text-center mt-2 italic font-light text-base leading-relaxed">
+                        {{ member.info }}
+                    </p>
+                </div>
+            </li>
+            {% empty %}
+            <li class="text-center col-span-full text-gray-500">No team members found.</li>
+            {% endfor %}
+        </ul>
+
+    </main>
+
+    <!-- Footer Include -->
+    {% include 'footer.html' %}
+
+</body>
+
+</html>

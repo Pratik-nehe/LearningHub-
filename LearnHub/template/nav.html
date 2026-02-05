@@ -1,0 +1,64 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title></title>
+    <!-- Google Font: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link href="{% static 'css/nav.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/footer.css' %}" rel="stylesheet">
+    <link href="{% static 'css/learnhub.css' %}" rel="stylesheet">
+
+    <script defer src="{% static 'java scripts/nav.js' %}"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body>
+    <nav class="bg-gradient-to-r from-blue-600 to-indigo-800 p-4 shadow-lg">
+        <div class="container mx-auto flex flex-wrap items-center justify-between">
+            <a href="#" class="text-white text-3xl font-extrabold rounded-md p-2 hover:bg-black hover:text-blue-600 transition duration-300">
+                <span class="text-indigo-200">Learn</span>Hub
+            </a>
+
+            <!-- Hamburger button for mobile -->
+            <button id="nav-toggle" class="md:hidden flex flex-col space-y-1.5 focus:outline-none">
+        <span class="block w-8 h-1 bg-white rounded"></span>
+        <span class="block w-8 h-1 bg-white rounded"></span>
+        <span class="block w-8 h-1 bg-white rounded"></span>
+      </button>
+
+
+            <!-- Nav links -->
+
+            <div id="nav-menu" class="hidden w-full md:flex md:w-auto md:space-x-6 mt-4 md:mt-0">
+                <a href="{% url 'main' %}" class="block text-white text-lg font-medium hover:underline hover:text-indigo-200 py-1 px-3 rounded-md">Home</a>
+
+                <a href="{% url 'features' %}" class="block text-white text-lg font-medium hover:underline hover:text-indigo-200 py-1 px-3 rounded-md">Features</a>
+                <a href="{% url 'courses' %}" class="block text-white text-lg font-medium hover:underline hover:text-indigo-200 py-1 px-3 rounded-md">Courses</a>
+                <a href="{% url 'notes' %}" class="block text-white text-lg font-medium hover:underline hover:text-indigo-200 py-1 px-3 rounded-md">Notes</a>
+                <a href="{% url 'exam' %}" class="block text-white text-lg font-medium hover:underline hover:text-indigo-200 py-1 px-3 rounded-md">Exams</a>
+
+                <a href="{% url 'contact' %}" class="block text-white text-lg font-medium hover:underline hover:text-indigo-200 py-1 px-3 rounded-md">Contact</a>
+
+                <a href="{% url 'aboute' %}" class="block text-white text-lg font-medium hover:underline hover:text-indigo-200 py-1 px-3 rounded-md">About Us</a>
+                <a href="{% url 'view_profile' %}" class="inline-block p-1 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md transition-all duration-300 shadow-md hover:shadow-lg">
+                    <img src="https://www.pngmart.com/files/23/Profile-PNG-Photo.png" alt="Profile" class="w-10 h-10 rounded-full border-2 border-white/70 hover:border-indigo-400 object-cover transition-transform duration-300 hover:scale-110">
+                </a>
+
+
+
+            </div>
+        </div>
+    </nav>
+
+
+
+</body>
+
+</html>

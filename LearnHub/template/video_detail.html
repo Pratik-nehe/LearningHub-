@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>{{ video.title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Navbar CSS -->
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+
+    <!-- Video CSS -->
+    <link rel="stylesheet" href="{% static 'css/video.css' %}">
+</head>
+
+<body style="background-color: black;">
+
+    {% include 'nav.html' %}
+    <!-- Navbar stays here -->
+    <div class="v">
+        <main class="video-main">
+            <div class="video-container">
+                <video class="video-player" controls preload="metadata" poster="{% static 'images/video-poster.jpg' %}">
+                <source src="{{ video.video.url }}" type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
+
+                <h2 class="video-title">{{ video.title }}</h2>
+                <p class="video-description">{{ video.info }}</p>
+
+                <a href="{% url 'courses' %}" class="back-button">⬅ Back to All Videos</a>
+            </div>
+        </main>
+
+    </div>
+    {% include 'footer.html' %}
+
+</body>
+
+</html>

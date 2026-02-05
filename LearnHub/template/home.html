@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learninghub</title>
+    <style>
+        /* Responsive animated background */
+        
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            */
+            background-color: white;
+            background-size: 400% 400%;
+            animation: gradientBG 10s ease infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 40px 20px;
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+        }
+        
+        h1 {
+            color: #fff;
+            margin-bottom: 30px;
+            font-size: clamp(24px, 5vw, 36px);
+            letter-spacing: 1px;
+        }
+        
+        .btn {
+            display: inline-block;
+            margin: 10px 10px;
+            padding: 14px 28px;
+            font-size: 1rem;
+            font-weight: bold;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.3);
+            border: 2px solid #fff;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: #fff;
+            color: #333;
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        @media (max-width: 768px) {
+            .btn {
+                width: 100%;
+                margin: 10px 0;
+                padding: 14px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="container">
+        <h1>Welcome to Learninghub</h1>
+        <a href="{% url 'login' %}" class="btn">Log In</a>
+        <a href="" class="btn">Register</a>
+
+    </div>
+
+</body>
+
+</html>
